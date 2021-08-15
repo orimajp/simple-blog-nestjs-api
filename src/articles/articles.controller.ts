@@ -47,7 +47,6 @@ export class ArticlesController {
     @Param('articleId') articleId: string,
     @Body() updateArticle: UpdateArticle,
   ) {
-    // return this.service.putArticle(articleId, updateArticle);
     const article = await this.service.putArticle(articleId, updateArticle);
     if (!article) {
       throw new HttpException(
