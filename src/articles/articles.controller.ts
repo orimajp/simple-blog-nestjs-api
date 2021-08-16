@@ -39,7 +39,8 @@ export class ArticlesController {
 
   @Post()
   async postArticle(@Body() createArticle: CreateArticle) {
-    return this.service.postArticle(createArticle);
+    const articleId = await this.service.postArticle(createArticle);
+    return { articleId };
   }
 
   @Put(':articleId')
